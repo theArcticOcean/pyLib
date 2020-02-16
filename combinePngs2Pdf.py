@@ -7,7 +7,7 @@ def combine2Pdf( folderPath, pdfFilePath ):
     sources = []
     for file in files:
         if 'png' in file:
-            pngFiles.append( file )
+            pngFiles.append( folderPath + file )
     pngFiles.sort()
     output = Image.open( pngFiles[0] )
     pngFiles.pop( 0 )
@@ -16,4 +16,9 @@ def combine2Pdf( folderPath, pdfFilePath ):
         if pngFile.mode == "RGB":
             pngFile = pngFile.convert( "RGB" )
         sources.append( pngFile )
-    output.save( pdfFilePath, "pdf", save_all = True,  )
+    output.save( pdfFilePath, "pdf", save_all=True, append_images=sources )
+
+if __name__ == "__main__":
+    folder = "/Users/weiyang/Desktop/pngFiles/"
+    pdfFile = "/Users/weiyang/Desktop/contract.pdf"
+    combine2Pdf( folder, pdfFile )
