@@ -22,8 +22,7 @@ def request_download( IMAGE_URL, folderName ):
         f.close()
 
 def getHtml( url ):
-    chrome_headers = { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) '
-                                     'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36' }
+    # chrome_headers =  ...
     page1 = urllib.request.Request( url, headers=chrome_headers )
     page = urllib.request.urlopen( page1 )
     html = page.read()
