@@ -48,8 +48,8 @@ if __name__ == "__main__":
     if h < 800:
         image = image_resize( image, height = 800 )
 
-    cv2.imshow( "result", image )
-    cv2.waitKey( 0 )
+    #cv2.imshow( "result", image )
+    #cv2.waitKey( 0 )
     #exit( 1 )
 
     gray = get_grayscale(image)
